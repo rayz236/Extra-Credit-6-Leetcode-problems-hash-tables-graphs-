@@ -7,7 +7,7 @@ class Solution {
             throw new RuntimeException();
         }
 
-        String result = "";
+        StringBuilder result = new StringBuilder();
         for (int i = 0; i < s.length(); i = i + k){
             String sub = s.substring(i, i + k);
             int sum = 0;
@@ -17,9 +17,9 @@ class Solution {
                 sum += val;
             }
             sum = sum % 26;
-            result += (char)(sum + 'a');
+            result.append((char)(sum + 'a'));
         }
-        return result;
+        return result.toString();
     }
 }
 void main() {
